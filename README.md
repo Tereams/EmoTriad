@@ -38,3 +38,31 @@ Fear | 174
 
 # Data Processing
 
+## Data Cleaning
+
+First, the data needs to be cleaned and classified into three categories: positive, neutral, and negative emotions. Since the DailyDialogue dataset contains multiple emotions, the emotions need to be merged. The processing approach is as follows:
+I will merge Sadness, Anger, Disgust, and Fear into the negative emotion category. Happiness/Joy will be considered as the positive emotion category, while Neutral will remain unchanged.
+As for the Surprise emotion, since it can be both positive and negative (such as surprise or fright), making it difficult to determine its polarity, it will be removed from the dataset for ease of processing. The final distribution of the three emotions is shown in the table below.
+
+Emotion Categories |  Emotion Quantities
+--- | --- 
+Positive | 11207
+Neutral	| 75065
+Negative | 2189
+
+## Data Balancing
+
+As can be seen from the table above, there is a clear imbalance in the data that needs to be addressed.
+However, we need to consider the characteristics of dialogue texts themselves. Unlike evaluative texts such as movie reviews, dialogues often contain many factual statements and many sentences with less obvious emotions. This results in a significantly higher proportion of neutral emotions compared to non-neutral emotions in the majority of dialogues.
+
+This imbalance is caused by the characteristics of dialogue texts rather than sampling, and forcibly eliminating this imbalance is difficult and inappropriate. When augmenting data for dialogue texts, it needs to be done on a dialogue level rather than a sentence level. This inevitably leads to an increase in the number of neutral emotions while increasing non-neutral emotions. However, since non-neutral emotions are generally less prevalent in dialogues, data augmentation would result in a few dialogues being duplicated multiple times, increasing the risk of overfitting.
+
+Therefore, I believe that we can only control the imbalance between non-neutral and neutral emotions. For example, we can remove dialogues consisting entirely of neutral emotions from the dataset. Additionally, within the non-neutral emotions, it is relatively easier to balance positive and negative emotions, and we can focus on achieving balance in this aspect.
+
+Therefore, I have removed dialogues that are entirely composed of neutral emotions from the dataset and reduced the number of positive emotions within the non-neutral emotions. After balancing, the final distribution of the data is as follows:
+
+Emotion Categories |  Emotion Quantities
+--- | --- 
+Positive | 2040
+Neutral	| 11228
+Negative | 2036
