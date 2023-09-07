@@ -66,3 +66,6 @@ Emotion Categories |  Emotion Quantities
 Positive | 2040
 Neutral	| 11228
 Negative | 2036
+
+![image](https://github.com/Tereams/EmoTriad/assets/106360504/35ca2bf3-7f31-483c-8920-eeb4f6f20322)
+
