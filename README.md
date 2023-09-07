@@ -67,5 +67,17 @@ Positive | 2040
 Neutral	| 11228
 Negative | 2036
 
+# Model
+This section introduces the models used in this experiment. The experiment is based on the BERT model, and two improvement approaches are proposed on top of it. The final model is a combination of these two improvement approaches.
+
+## Baseline Model
+The experiment utilizes BERT as the baseline model for the task of dialogue emotion classification.<br>
+The approach of the baseline model is to split the dialogue into individual sentences and directly classify each sentence as follows:<br>
+**a.** Firstly, each sentence is embedded using the embedding layer provided by BERT.<br>
+**b.** Next, the embedded sentences are passed through the BERT model to extract information.<br>
+**c.** The output of the CLS (classification) token from BERT is extracted as the comprehensive semantic representation of the entire sentence.<br>
+**d.** The CLS representation is then fed into a fully connected layer, and the output of the fully connected layer is used for classification.<br>
+The workflow diagram of the entire process is shown below:
+
 ![image](https://github.com/Tereams/EmoTriad/assets/106360504/35ca2bf3-7f31-483c-8920-eeb4f6f20322)
 
