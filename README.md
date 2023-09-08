@@ -1,25 +1,18 @@
-# EmoSense
+![image](https://github.com/Tereams/EmoTriad/assets/106360504/4d92eaec-f5f1-4e90-a396-ca285e92e202)# EmoSense
 EmoSense: Advanced Emotion Recognition in Conversations
 
 ## Emotion Recognition Task Using the DailyDialog Public Dataset
 
 ### Explanation of the functions of the programs in the folder:
 
-acc_graph1.py: Visualization function for accuracy.
-
-balance.py: Program for data balancing.
-
-full_version.py: Final version of the model.
-
-loss_graph.py: Visualization function for loss.
-
-main.py: Basic version of the model.
-
-without_conver.py: Model that only models the speaker.
-
-without_person.py: Model that only models the context.
-
-Specific details of the content will be provided later.
+acc_graph1.py: Visualization function for accuracy.<br>
+balance.py: Program for data balancing.<br>
+full_version.py: Final version of the model.<br>
+loss_graph.py: Visualization function for loss.<br>
+main.py: Basic version of the model.<br>
+without_conver.py: Model that only models the speaker.<br>
+without_person.py: Model that only models the context.<br>
+Specific details of the content will be provided later.<br>
 
 # Dataset
 The dataset used in this experiment is DailyDialogue, an English public dataset. The data in this dataset consists of English text in the form of dialogues. Sentences within the dialogues are separated by "eou" and each sentence is annotated with an emotion label. The emotion labels are separated by spaces and include seven categories: Neutral, Happiness/Joy, Surprise, Sadness, Anger, Disgust, and Fear. 
@@ -80,4 +73,14 @@ The approach of the baseline model is to split the dialogue into individual sent
 The workflow diagram of the entire process is shown below:
 
 ![image](https://github.com/Tereams/EmoTriad/assets/106360504/35ca2bf3-7f31-483c-8920-eeb4f6f20322)
+
+## Improvement Approach 1
+In the baseline approach, it can be observed that the lack of consideration for contextual information within the dialogue, as each sentence is processed individually, leads to a simplistic approach that disrupts the inherent semantic connections among the sentences. Therefore, an improvement is needed to address this issue.<br>
+In the first improvement approach, a BiLSTM (Bidirectional Long Short-Term Memory) is introduced to model the context. The specific steps are as follows:<br>
+**a.** The first three steps of this approach are the same as the baseline approach.<br>
+**b.** After obtaining the CLS outputs of each sentence in a dialogue, the CLS outputs of all the sentences in the dialogue are fed into a BiLSTM layer. This results in an equal number of outputs as the inputs.<br>
+**c.** The outputs of the BiLSTM layer are then passed through a fully connected layer, and the output of the fully connected layer is used for classification.<br>
+The workflow diagram of the entire process is as follows:
+
+![image](https://github.com/Tereams/EmoTriad/assets/106360504/1c86533e-0372-448d-8117-13a8bfec8976)
 
