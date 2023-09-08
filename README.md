@@ -1,4 +1,4 @@
-![image](https://github.com/Tereams/EmoTriad/assets/106360504/4d92eaec-f5f1-4e90-a396-ca285e92e202)# EmoSense
+# EmoSense
 EmoSense: Advanced Emotion Recognition in Conversations
 
 ## Emotion Recognition Task Using the DailyDialog Public Dataset
