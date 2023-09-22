@@ -84,3 +84,14 @@ The workflow diagram of the entire process is as follows:
 
 ![image](https://github.com/Tereams/EmoTriad/assets/106360504/1c86533e-0372-448d-8117-13a8bfec8976)
 
+## Improved Approach 2
+In the foundational approach, there is another aspect that has been overlooked, which is the modeling of the speaker. The speaker's own emotions also have a certain coherence. For example, if a person is in a happy mood while saying a sentence, it is likely that their next sentence will also have a positive emotion. Therefore, it is necessary to model the speaker. The second improved approach mainly addresses this issue:<br>
+The specific approach is as follows:<br>
+a. The first three steps of this approach are the same as the foundational approach.<br>
+b. After obtaining the output of the CLS label for each sentence in a dialogue, separate the sentences in the dialogue into two groups based on the two speakers. Then, feed the content spoken by each speaker into two separate BiLSTM models to obtain their respective outputs.<br>
+c. Reassemble the outputs of the two BiLSTM layers in the original order. Feed the recombined result into a fully connected layer, and classify the output of the fully connected layer.<br>
+The flowchart of the entire process is as follows:
+
+![image](https://github.com/Tereams/EmoTriad/assets/106360504/09a154ef-31ef-4f68-929e-5c7e0e66d86e)
+
+
