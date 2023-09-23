@@ -94,4 +94,15 @@ The flowchart of the entire process is as follows:
 
 ![image](https://github.com/Tereams/EmoTriad/assets/106360504/09a154ef-31ef-4f68-929e-5c7e0e66d86e)
 
+## Final Model
+
+The final model I adopted is a combination of Improved Approach 1 and Improved Approach 2, which involves both contextual modeling and speaker modeling. The specific approach is as follows:<br>
+**a.** The first three steps of this approach are the same as the foundational approach.<br>
+**b.** The second part of this approach is the same as step b in Improved Approach 1.<br>
+**c.** Take the output of step a and process it using the methods described in steps b and c of Improved Approach 2.<br>
+**d.** Concatenate the results from steps b and c, and then feed them into a fully connected layer. The output of the fully connected layer is used for classification.<br>
+The flowchart of the entire process is as follows:
+
+![image](https://github.com/Tereams/EmoTriad/assets/106360504/18b4c41c-bfb5-4eee-a118-732b71d16132)
+
 
