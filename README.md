@@ -105,4 +105,12 @@ The flowchart of the entire process is as follows:
 
 ![image](https://github.com/Tereams/EmoTriad/assets/106360504/18b4c41c-bfb5-4eee-a118-732b71d16132)
 
+# Experiment
 
+## Experimental Procedure
+The experimental procedure for this study is as follows:<br>
+**a.** Divide the processed dataset into training, validation, and test sets. The ratio of division is 6:2:2.<br>
+**b.** Set the model parameters, including learning rate, batch size, and number of epochs.<br>
+**c.** Select a model and train it using the training set.<br>
+**d.** Fine-tune the hyperparameters using the validation set. <br>
+**e.** Test the trained model on the test set and compare the results.<br>
