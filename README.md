@@ -114,3 +114,12 @@ The experimental procedure for this study is as follows:<br>
 **c.** Select a model and train it using the training set.<br>
 **d.** Fine-tune the hyperparameters using the validation set. <br>
 **e.** Test the trained model on the test set and compare the results.<br>
+
+## Model Comparison
+The following figure illustrates a comparison of four models introduced in the model section, represented by curves depicting the accuracy on the test set for each round of the training process.<br>
+The parameter settings for the models are as follows:<br>
+Learning rate (lr) = 1e-5, batch size = 4. <br>
+![image](https://github.com/Tereams/EmoTriad/assets/106360504/66f692b6-e9db-4bcc-a0b9-44cc215c6745)
+
+From the curves in the graph and the dashed line indicating the maximum value, it is evident that the overall best performance is achieved by the final model that incorporates both improvement strategies. Both improvement strategies show enhancements over the baseline approach.
+
